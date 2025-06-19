@@ -69,7 +69,7 @@ export default function QuotePage() {
 
   const serviceTypes = [
     { value: "refrigeration", label: "Refrigeration Systems", description: "Commercial & industrial refrigeration" },
-    { value: "cold-room", label: "Cold Room Installation", description: "Complete cold storage solutions" },
+    { value: "cold-room", label: "Cold Storage Installation", description: "Complete cold storage solutions" },
     { value: "kitchen-hood", label: "Kitchen Hood Systems", description: "Commercial kitchen ventilation" },
     { value: "chiller", label: "Chiller & Freezer Services", description: "Industrial cooling systems" },
     { value: "esp", label: "ESP Installation", description: "Electrostatic precipitator systems" },
@@ -266,7 +266,7 @@ export default function QuotePage() {
                       </SelectTrigger>
                       <SelectContent>
                         <SelectItem value="freezer">Freezer (-25°C to -18°C)</SelectItem>
-                        <SelectItem value="cold">Cold Room (0°C to 5°C)</SelectItem>
+                        <SelectItem value="cold">Cold Storage (0°C to 5°C)</SelectItem>
                         <SelectItem value="cool">Cool Room (5°C to 15°C)</SelectItem>
                         <SelectItem value="ac">Air Conditioning (18°C to 24°C)</SelectItem>
                         <SelectItem value="custom">Custom Range</SelectItem>

@@ -8,7 +8,6 @@ import {
   Thermometer,
   Shield,
   Phone,
-  MessageCircle,
   Star,
   Users,
   Calendar,
@@ -21,6 +20,8 @@ import {
   Utensils,
   Warehouse,
 } from "lucide-react"
+import { WhatsAppIcon } from "./images/Icons"
+import Image from "next/image"
 
 export default function HomePage() {
   const services = [
@@ -33,7 +34,7 @@ export default function HomePage() {
     },
     {
       icon: <Thermometer className="h-12 w-12" />,
-      title: "Cold Room Installation",
+      title: "Cold Storage Installation",
       description: "Complete turnkey cold storage solutions from -40°C to +15°C temperature range.",
       features: ["Custom Design", "Quick Installation", "Full Warranty"],
       link: "/services#cold-room",
@@ -62,19 +63,52 @@ export default function HomePage() {
   ]
 
   const brands = [
-    "NAFCO",
-    "TechnoPro Middle East",
-    "Alpha Impex",
-    "Dubai City Builders",
-    "RAK Precast",
-    "DGR Warehouse",
-    "JAFZA South",
-    "Emirates Steel",
-    "Al Ghurair",
-    "Majid Al Futtaim",
-    "ADNOC",
-    "Dubai Municipality",
-  ]
+
+    {
+      name: "Bintouq",
+      image: "https://cdn.jsdelivr.net/gh/waleedcj/eurogulfassets/bintouq.webp"
+    },
+    {
+      name: "Foodstuff",
+      image: "https://cdn.jsdelivr.net/gh/waleedcj/eurogulfassets/foodstuff.webp"
+    },
+    {
+      name: "Glorex",
+      image: "https://cdn.jsdelivr.net/gh/waleedcj/eurogulfassets/glorex.webp"
+    },
+    {
+      name: "Master Baker",
+      image: "https://cdn.jsdelivr.net/gh/waleedcj/eurogulfassets/masterBakernew.webp"
+    },
+    {
+      name: "NAFFCO",
+      image: "https://cdn.jsdelivr.net/gh/waleedcj/eurogulfassets/naffconew.webp"
+    },
+    {
+      name: "TechnoPro Middle East", 
+      image: "https://cdn.jsdelivr.net/gh/waleedcj/eurogulfassets/technopro.webp"
+    },
+    {
+      name: "All Fresh Co",
+      image: "https://cdn.jsdelivr.net/gh/waleedcj/eurogulfassets/allfreshco.webp"
+    },
+    {
+      name: "Barakat",
+      image: "https://cdn.jsdelivr.net/gh/waleedcj/eurogulfassets/barakat.webp"
+    },
+    {
+      name: "OMIS",
+      image: "https://cdn.jsdelivr.net/gh/waleedcj/eurogulfassets/omis.webp"
+    },
+    {
+      name: "TSSC",
+      image: "https://cdn.jsdelivr.net/gh/waleedcj/eurogulfassets/tssc.webp"
+    },
+    {
+      name: "Vivel",
+      image: "https://cdn.jsdelivr.net/gh/waleedcj/eurogulfassets/vivel.webp"
+    }
+  ];
 
   const differentiators = [
     {
@@ -113,11 +147,11 @@ export default function HomePage() {
 
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-6xl mx-auto text-center">
-            <Badge className="mb-8 bg-yellow-600/20 border-2 border-yellow-400 text-yellow-300 hover:bg-yellow-600/30 text-lg px-6 py-3 font-semibold">
+            <Badge className="mb-8 bg-yellow-600/20 border-2 border-yellow-400 rounded-xl text-yellow-300 hover:bg-yellow-600/30 text-md px-6 py-3 font-semibold">
               🏆 UAE&apos;s #1 HVAC Solutions Provider • 18+ Years of Excellence
             </Badge>
 
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-8 leading-tight">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight">
               Developing Safety in the{" "}
               <span className="text-yellow-400 relative inline-block">
                 Real World
@@ -125,7 +159,7 @@ export default function HomePage() {
               </span>
             </h1>
 
-            <p className="text-2xl md:text-3xl mb-12 text-blue-100 leading-relaxed max-w-5xl mx-auto font-light">
+            <p className="text-1xl md:text-2xl mb-12 text-blue-100 leading-relaxed max-w-5xl mx-auto font-light">
               Professional HVAC solutions trusted by <span className="font-bold text-yellow-400">500+ companies</span>{" "}
               across the UAE. From design to maintenance, we deliver excellence that keeps your business running.
             </p>
@@ -153,17 +187,17 @@ export default function HomePage() {
             <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">
               <Button
                 size="lg"
-                className="bg-yellow-600 hover:bg-yellow-700 text-white px-12 py-6 text-xl font-bold shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-105"
+                className="bg-yellow-600 hover:bg-yellow-700 text-white px-12 py-6 text-xl font-bold shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-105 hover:cursor-pointer"
               >
-                <Phone className="mr-3 h-6 w-6" />
+                <Phone className="mr-2 h-6 w-6" />
                 Get Free Assessment
               </Button>
               <Button
                 size="lg"
                 variant="outline"
-                className="border-3 border-white text-white hover:bg-white hover:text-blue-900 px-12 py-6 text-xl font-bold transition-all duration-300 hover:scale-105"
+                className=" border-white text-white hover:bg-white hover:text-blue-900 px-12 py-6 text-xl font-bold transition-all duration-300 hover:scale-105 hover:cursor-pointer"
               >
-                <MessageCircle className="mr-3 h-6 w-6" />
+                <WhatsAppIcon className="h-15 w-15 mr-2" />
                 WhatsApp Consultation
               </Button>
             </div>
@@ -187,42 +221,44 @@ export default function HomePage() {
                 <span className="text-lg font-medium">Lifetime Support</span>
               </div>
             </div>
-
-            {/* Urgency Element */}
-            <div className="mt-12 bg-red-600/20 border border-red-400 rounded-2xl p-6 max-w-2xl mx-auto">
-              <div className="text-red-300 font-bold text-lg mb-2">⚡ Limited Time Offer</div>
-              <div className="text-white text-xl">
-                Book your free assessment this month and receive a{" "}
-                <span className="text-yellow-400 font-bold">15% discount</span> on installation services
-              </div>
-            </div>
           </div>
         </div>
       </section>
 
       {/* Trusted Brands Carousel */}
       <section className="py-16 bg-white border-b">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Trusted by Industry Leaders</h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Over 500+ companies across the UAE trust Euro Gulf Tech for their critical HVAC infrastructure
-            </p>
-          </div>
-          <div className="relative overflow-hidden">
-            <div className="flex animate-scroll">
-              {[...brands, ...brands].map((brand, index) => (
-                <div
-                  key={index}
-                  className="flex-shrink-0 mx-8 px-8 py-6 bg-gray-50 rounded-xl border hover:shadow-md transition-shadow"
-                >
-                  <div className="text-gray-700 font-semibold text-lg whitespace-nowrap">{brand}</div>
-                </div>
-              ))}
+  <div className="container mx-auto px-4">
+    <div className="text-center mb-12">
+      <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Trusted by Industry Leaders</h2>
+      <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+        Over 500+ companies across the UAE trust Euro Gulf Tech for their critical HVAC infrastructure
+      </p>
+    </div>
+    <div className="relative overflow-hidden">
+      <div className="flex animate-scroll">
+        {[...brands, ...brands].map((brand, index) => (
+          <div
+            key={index}
+            className="flex-shrink-0 mx-8 px-8 py-6 bg-white rounded-xl border hover:shadow-md transition-shadow"
+          >
+            <div className="relative w-32 h-16">
+              <Image
+                src={brand.image}
+                alt={brand.name}
+                // width={200}
+                // height={200}
+                // fill
+                fill
+                className="object-contain"
+                // sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              />
             </div>
           </div>
-        </div>
-      </section>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* Enhanced Stats Section */}
       <section className="py-20 bg-gradient-to-r from-gray-50 to-blue-50">
@@ -361,7 +397,7 @@ export default function HomePage() {
                 company: "NAFCO",
                 type: "Industrial Manufacturing",
                 quote:
-                  "Euro Gulf Tech transformed our facility with a state-of-the-art cold room system. The installation was flawless, and their ongoing maintenance has kept us running at 100% efficiency for over 3 years.",
+                  "Euro Gulf Tech transformed our facility with a state-of-the-art cold storage system. The installation was flawless, and their ongoing maintenance has kept us running at 100% efficiency for over 3 years.",
                 result: "Zero downtime in 3 years",
                 person: "Ahmed Al-Rashid",
                 position: "Operations Manager",
@@ -436,7 +472,7 @@ export default function HomePage() {
                 variant="outline"
                 className="border-2 border-white text-white hover:bg-white hover:text-yellow-700 px-10 py-4 text-xl font-bold transition-all"
               >
-                <MessageCircle className="mr-3 h-6 w-6" />
+                <WhatsAppIcon className="mr-3 h-6 w-6" />
                 WhatsApp Consultation
               </Button>
             </div>

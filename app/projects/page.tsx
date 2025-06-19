@@ -32,12 +32,12 @@ export default function ProjectsPage() {
     },
     {
       client: "Alpha Impex Electromechanical",
-      project: "Cold Room & Refrigeration",
+      project: "Cold Storage & Refrigeration",
       category: "Industrial",
       location: "Abu Dhabi, UAE",
       year: "2022",
-      description: "Design and installation of large-scale cold room facility with advanced refrigeration systems.",
-      services: ["Cold Room Design", "Refrigeration Systems", "Temperature Monitoring"],
+      description: "Design and installation of large-scale cold storage facility with advanced refrigeration systems.",
+      services: ["Cold Storage Design", "Refrigeration Systems", "Temperature Monitoring"],
       image: "/placeholder.svg?height=300&width=400",
       icon: <Warehouse className="h-6 w-6" />,
     },
@@ -86,7 +86,7 @@ export default function ProjectsPage() {
     {
       name: "Commercial Refrigeration",
       count: 200,
-      description: "Commercial cold rooms and refrigeration solutions",
+      description: "Commercial cold storages and refrigeration solutions",
       icon: <Building className="h-8 w-8" />,
     },
     {

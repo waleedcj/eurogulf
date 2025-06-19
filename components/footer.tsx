@@ -1,12 +1,13 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { Snowflake, MapPin, Phone, Mail, Clock, Facebook, Instagram, Linkedin, MessageCircle } from "lucide-react"
+import { Snowflake, MapPin, Phone, Mail, Clock, Facebook, Instagram, Linkedin } from "lucide-react"
+import { WhatsAppIcon } from "@/app/images/Icons"
 
 export default function Footer() {
   const services = [
     "Refrigeration Systems",
-    "Cold Room Installation",
+    "Cold Storage Installation",
     "Kitchen Hood Systems",
     "Chiller & Freezer Services",
     "ESP Installation",
@@ -53,7 +54,7 @@ export default function Footer() {
                 <Linkedin className="h-5 w-5" />
               </Button>
               <Button variant="ghost" size="sm" className="text-gray-400 hover:text-white">
-                <MessageCircle className="h-5 w-5" />
+                <WhatsAppIcon className="h-5 w-5" />
               </Button>
             </div>
           </div>

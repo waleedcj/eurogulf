@@ -5,7 +5,8 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { Badge } from "@/components/ui/badge"
-import { Menu, Phone, MessageCircle, Snowflake, X } from "lucide-react"
+import { Menu, Phone, Snowflake, X } from "lucide-react"
+import { WhatsAppIcon } from "@/app/images/Icons"
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
@@ -66,11 +67,15 @@ export default function Header() {
 
           {/* Desktop CTA Buttons */}
           <div className="hidden md:flex items-center space-x-3">
-            <Button variant="outline" size="sm">
-              <MessageCircle className="mr-2 h-4 w-4" />
+            <Button
+              variant="outline"
+              size="sm"
+              className="hover:cursor-pointer"
+            >
+              <WhatsAppIcon className="h-15 w-15 mr-2" />
               WhatsApp
             </Button>
-            <Button className="bg-yellow-600 hover:bg-yellow-700 text-white" size="sm">
+            <Button className="bg-yellow-600 hover:bg-yellow-700 text-white hover:cursor-pointer" size="sm">
               <Phone className="mr-2 h-4 w-4" />
               Get Quote
             </Button>
@@ -118,7 +123,7 @@ export default function Header() {
                   Get Free Quote
                 </Button>
                 <Button variant="outline" className="w-full">
-                  <MessageCircle className="mr-2 h-4 w-4" />
+                  <WhatsAppIcon className="mr-2 h-4 w-4" />
                   WhatsApp Us
                 </Button>
               </div>

@@ -30,7 +30,7 @@ export default function ServicesPage() {
     {
       id: "cold-room",
       icon: <Thermometer className="h-12 w-12" />,
-      title: "Cold Room Installation",
+      title: "Cold Storage Installation",
       subtitle: "Design • Supply • Installation • Commissioning",
       description: "Turnkey cold storage solutions from concept to completion with comprehensive warranty coverage.",
       features: [

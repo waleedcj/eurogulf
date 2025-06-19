@@ -10,7 +10,8 @@ import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Badge } from "@/components/ui/badge"
-import { MapPin, Phone, Mail, Clock, MessageCircle, Send, User, AlertTriangle } from "lucide-react"
+import { MapPin, Phone, Mail, Clock, Send, User, AlertTriangle } from "lucide-react"
+import { WhatsAppIcon } from "../images/Icons"
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -49,7 +50,7 @@ export default function ContactPage() {
       action: "Send Email",
     },
     {
-      icon: <MessageCircle className="h-6 w-6" />,
+      icon: <WhatsAppIcon className="h-6 w-6" />,
       title: "WhatsApp",
       details: ["+971 52 6798630"],
       action: "Chat Now",
@@ -95,7 +96,7 @@ export default function ContactPage() {
                   +971 52 6798630
                 </Button>
                 <Button variant="outline" className="border-red-600 text-red-600 hover:bg-red-50">
-                  <MessageCircle className="mr-2 h-4 w-4" />
+                  <WhatsAppIcon className="mr-2 h-4 w-4" />
                   WhatsApp
                 </Button>
               </div>
@@ -168,7 +169,7 @@ export default function ContactPage() {
                         </SelectTrigger>
                         <SelectContent>
                           <SelectItem value="refrigeration">Refrigeration Systems</SelectItem>
-                          <SelectItem value="cold-room">Cold Room Installation</SelectItem>
+                          <SelectItem value="cold-room">Cold Storage Installation</SelectItem>
                           <SelectItem value="kitchen-hood">Kitchen Hood Systems</SelectItem>
                           <SelectItem value="chiller">Chiller & Freezer Services</SelectItem>
                           <SelectItem value="esp">ESP Installation</SelectItem>
@@ -304,7 +305,7 @@ export default function ContactPage() {
                       Call Direct
                     </Button>
                     <Button size="sm" variant="outline">
-                      <MessageCircle className="mr-2 h-4 w-4" />
+                      <WhatsAppIcon className="mr-2 h-4 w-4" />
                       WhatsApp
                     </Button>
                   </div>

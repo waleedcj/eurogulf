@@ -5,15 +5,16 @@ import "./globals.css"
 // import { ThemeProvider } from "@/components/theme-provider"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
+import { WhatsAppButton } from "@/components/whatsapp-button"
 
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: "Euro Gulf Tech Contracting LLC - UAEs Premier HVAC Solutions",
   description:
-    "Professional refrigeration, cold room, and ventilation services since 2006. Civil Defense Approved HVAC solutions across UAE.",
+    "Professional refrigeration, Cold Storage, and ventilation services since 2006. Civil Defense Approved HVAC solutions across UAE.",
   keywords:
-    "HVAC Sharjah, Cold Room Installation UAE, Kitchen Hood Installation Dubai, Refrigeration Services UAE, Chiller Maintenance Sharjah",
+    "HVAC Sharjah, Cold Room Installation UAE,  Cold Storage Installation UAE, Kitchen Hood Installation Dubai, Refrigeration Services UAE, Chiller Maintenance Sharjah",
 }
 
 export default function RootLayout({
@@ -28,6 +29,7 @@ export default function RootLayout({
           <Header />
           <main>{children}</main>
           <Footer />
+          <WhatsAppButton phoneNumber="971547425544" message="Hello! I'm interested in your business setup services." />
         {/* </ThemeProvider> */}
       </body>
     </html>

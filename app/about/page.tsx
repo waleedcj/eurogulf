@@ -93,7 +93,7 @@ export default function AboutPage() {
               </p>
               <p>
                 With over 18 years of experience, our team of certified professionals specializes in commercial and
-                industrial refrigeration systems, cold rooms, kitchen hoods, and comprehensive ventilation solutions. We
+                industrial refrigeration systems, cold storages, kitchen hoods, and comprehensive ventilation solutions. We
                 serve a diverse clientele including industrial facilities, commercial buildings, restaurants, and
                 warehouses.
               </p>
