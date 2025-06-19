@@ -1,103 +1,462 @@
-import Image from "next/image";
+import Link from "next/link"
+import { Button } from "@/components/ui/button"
+import { Card, CardContent } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
+import {
+  Snowflake,
+  Wind,
+  Thermometer,
+  Shield,
+  Phone,
+  MessageCircle,
+  Star,
+  Users,
+  Calendar,
+  Award,
+  CheckCircle,
+  Clock,
+  TrendingUp,
+  Building2,
+  Factory,
+  Utensils,
+  Warehouse,
+} from "lucide-react"
 
-export default function Home() {
+export default function HomePage() {
+  const services = [
+    {
+      icon: <Snowflake className="h-12 w-12" />,
+      title: "Refrigeration Systems",
+      description: "Civil Defense Approved (CDA) refrigeration solutions with 99.9% uptime guarantee.",
+      features: ["CDA Certified", "Energy Efficient", "24/7 Monitoring"],
+      link: "/services#refrigeration",
+    },
+    {
+      icon: <Thermometer className="h-12 w-12" />,
+      title: "Cold Room Installation",
+      description: "Complete turnkey cold storage solutions from -40°C to +15°C temperature range.",
+      features: ["Custom Design", "Quick Installation", "Full Warranty"],
+      link: "/services#cold-room",
+    },
+    {
+      icon: <Wind className="h-12 w-12" />,
+      title: "Kitchen Hood Systems",
+      description: "Advanced commercial kitchen ventilation meeting international safety standards.",
+      features: ["Fire Safety", "Noise Control", "Easy Maintenance"],
+      link: "/services#kitchen-hood",
+    },
+  ]
+
+  const stats = [
+    { number: "18+", label: "Years Experience", icon: <Calendar className="h-6 w-6" /> },
+    { number: "500+", label: "Projects Completed", icon: <Building2 className="h-6 w-6" /> },
+    { number: "24/7", label: "Emergency Support", icon: <Clock className="h-6 w-6" /> },
+    { number: "100%", label: "CDA Approved", icon: <Shield className="h-6 w-6" /> },
+  ]
+
+  const industries = [
+    { icon: <Factory className="h-8 w-8" />, title: "Industrial", desc: "Manufacturing & Processing" },
+    { icon: <Utensils className="h-8 w-8" />, title: "Hospitality", desc: "Hotels & Restaurants" },
+    { icon: <Warehouse className="h-8 w-8" />, title: "Logistics", desc: "Cold Storage & Distribution" },
+    { icon: <Building2 className="h-8 w-8" />, title: "Commercial", desc: "Offices & Retail" },
+  ]
+
+  const brands = [
+    "NAFCO",
+    "TechnoPro Middle East",
+    "Alpha Impex",
+    "Dubai City Builders",
+    "RAK Precast",
+    "DGR Warehouse",
+    "JAFZA South",
+    "Emirates Steel",
+    "Al Ghurair",
+    "Majid Al Futtaim",
+    "ADNOC",
+    "Dubai Municipality",
+  ]
+
+  const differentiators = [
+    {
+      icon: <Award className="h-8 w-8" />,
+      title: "Civil Defense Approved",
+      description: "All systems certified and compliant with UAE safety regulations",
+      benefit: "Zero compliance issues",
+    },
+    {
+      icon: <Users className="h-8 w-8" />,
+      title: "Expert Engineering Team",
+      description: "Certified engineers with 10+ years specialized HVAC experience",
+      benefit: "Superior technical solutions",
+    },
+    {
+      icon: <Clock className="h-8 w-8" />,
+      title: "24/7 Emergency Response",
+      description: "Rapid response team available round-the-clock for critical failures",
+      benefit: "Minimize downtime costs",
+    },
+    {
+      icon: <TrendingUp className="h-8 w-8" />,
+      title: "Energy Efficiency Guarantee",
+      description: "Advanced systems designed to reduce energy consumption by up to 30%",
+      benefit: "Lower operational costs",
+    },
+  ]
+
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div className="min-h-screen">
+      {/* Enhanced Hero Section with Video Background */}
+      <section className="relative bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 text-white py-20 lg:py-28 overflow-hidden">
+        <div className="absolute inset-0 bg-black/50"></div>
+        {/* Video background placeholder - replace with actual video */}
+        <div className="absolute inset-0 bg-[url('/placeholder.svg?height=1080&width=1920')] bg-cover bg-center opacity-20"></div>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-6xl mx-auto text-center">
+            <Badge className="mb-8 bg-yellow-600/20 border-2 border-yellow-400 text-yellow-300 hover:bg-yellow-600/30 text-lg px-6 py-3 font-semibold">
+              🏆 UAE&apos;s #1 HVAC Solutions Provider • 18+ Years of Excellence
+            </Badge>
+
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-8 leading-tight">
+              Developing Safety in the{" "}
+              <span className="text-yellow-400 relative inline-block">
+                Real World
+                <div className="absolute -bottom-3 left-0 w-full h-2 bg-yellow-400 rounded-full"></div>
+              </span>
+            </h1>
+
+            <p className="text-2xl md:text-3xl mb-12 text-blue-100 leading-relaxed max-w-5xl mx-auto font-light">
+              Professional HVAC solutions trusted by <span className="font-bold text-yellow-400">500+ companies</span>{" "}
+              across the UAE. From design to maintenance, we deliver excellence that keeps your business running.
+            </p>
+
+            {/* Key Value Propositions */}
+            <div className="grid md:grid-cols-3 gap-6 mb-12 max-w-4xl mx-auto">
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
+                <div className="text-3xl font-bold text-yellow-400 mb-2">24/7</div>
+                <div className="text-lg font-semibold">Emergency Response</div>
+                <div className="text-blue-200 text-sm">Rapid support when you need it most</div>
+              </div>
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
+                <div className="text-3xl font-bold text-yellow-400 mb-2">100%</div>
+                <div className="text-lg font-semibold">CDA Approved</div>
+                <div className="text-blue-200 text-sm">Fully compliant with UAE standards</div>
+              </div>
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
+                <div className="text-3xl font-bold text-yellow-400 mb-2">30%</div>
+                <div className="text-lg font-semibold">Energy Savings</div>
+                <div className="text-blue-200 text-sm">Guaranteed efficiency improvements</div>
+              </div>
+            </div>
+
+            {/* Primary CTAs */}
+            <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">
+              <Button
+                size="lg"
+                className="bg-yellow-600 hover:bg-yellow-700 text-white px-12 py-6 text-xl font-bold shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-105"
+              >
+                <Phone className="mr-3 h-6 w-6" />
+                Get Free Assessment
+              </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-3 border-white text-white hover:bg-white hover:text-blue-900 px-12 py-6 text-xl font-bold transition-all duration-300 hover:scale-105"
+              >
+                <MessageCircle className="mr-3 h-6 w-6" />
+                WhatsApp Consultation
+              </Button>
+            </div>
+
+            {/* Trust Indicators */}
+            <div className="flex flex-wrap justify-center items-center gap-8 text-blue-200">
+              <div className="flex items-center gap-3">
+                <CheckCircle className="h-6 w-6 text-green-400" />
+                <span className="text-lg font-medium">Free Site Assessment</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <CheckCircle className="h-6 w-6 text-green-400" />
+                <span className="text-lg font-medium">24-Hour Quote Delivery</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <CheckCircle className="h-6 w-6 text-green-400" />
+                <span className="text-lg font-medium">No Hidden Costs</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <CheckCircle className="h-6 w-6 text-green-400" />
+                <span className="text-lg font-medium">Lifetime Support</span>
+              </div>
+            </div>
+
+            {/* Urgency Element */}
+            <div className="mt-12 bg-red-600/20 border border-red-400 rounded-2xl p-6 max-w-2xl mx-auto">
+              <div className="text-red-300 font-bold text-lg mb-2">⚡ Limited Time Offer</div>
+              <div className="text-white text-xl">
+                Book your free assessment this month and receive a{" "}
+                <span className="text-yellow-400 font-bold">15% discount</span> on installation services
+              </div>
+            </div>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </section>
+
+      {/* Trusted Brands Carousel */}
+      <section className="py-16 bg-white border-b">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Trusted by Industry Leaders</h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Over 500+ companies across the UAE trust Euro Gulf Tech for their critical HVAC infrastructure
+            </p>
+          </div>
+          <div className="relative overflow-hidden">
+            <div className="flex animate-scroll">
+              {[...brands, ...brands].map((brand, index) => (
+                <div
+                  key={index}
+                  className="flex-shrink-0 mx-8 px-8 py-6 bg-gray-50 rounded-xl border hover:shadow-md transition-shadow"
+                >
+                  <div className="text-gray-700 font-semibold text-lg whitespace-nowrap">{brand}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Enhanced Stats Section */}
+      <section className="py-20 bg-gradient-to-r from-gray-50 to-blue-50">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {stats.map((stat, index) => (
+              <div key={index} className="text-center group">
+                <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 group-hover:scale-105">
+                  <div className="text-blue-900 mb-3 flex justify-center">{stat.icon}</div>
+                  <div className="text-4xl md:text-5xl font-bold text-blue-900 mb-2">{stat.number}</div>
+                  <div className="text-gray-600 font-medium">{stat.label}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Industries We Serve */}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Industries We Serve</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Specialized HVAC solutions tailored for diverse industry requirements
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {industries.map((industry, index) => (
+              <Card key={index} className="group hover:shadow-xl transition-all duration-300 border-0 shadow-lg">
+                <CardContent className="p-8 text-center">
+                  <div className="text-blue-900 mb-4 group-hover:text-yellow-600 transition-colors flex justify-center">
+                    {industry.icon}
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">{industry.title}</h3>
+                  <p className="text-gray-600">{industry.desc}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Enhanced Services Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <Badge className="mb-4 bg-blue-100 text-blue-800 px-4 py-2">Our Core Services</Badge>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Professional HVAC Solutions</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Comprehensive services designed to meet the highest standards of safety, efficiency, and reliability
+            </p>
+          </div>
+          <div className="grid lg:grid-cols-3 gap-8">
+            {services.map((service, index) => (
+              <Card
+                key={index}
+                className="group hover:shadow-2xl transition-all duration-500 border-0 shadow-lg overflow-hidden"
+              >
+                <CardContent className="p-0">
+                  <div className="bg-gradient-to-br from-blue-900 to-blue-800 p-8 text-white">
+                    <div className="text-yellow-400 mb-4 group-hover:scale-110 transition-transform duration-300">
+                      {service.icon}
+                    </div>
+                    <h3 className="text-2xl font-bold mb-3">{service.title}</h3>
+                  </div>
+                  <div className="p-8">
+                    <p className="text-gray-600 mb-6 leading-relaxed">{service.description}</p>
+                    <div className="space-y-3 mb-6">
+                      {service.features.map((feature, idx) => (
+                        <div key={idx} className="flex items-center gap-3">
+                          <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0" />
+                          <span className="text-gray-700">{feature}</span>
+                        </div>
+                      ))}
+                    </div>
+                    <Link href={service.link}>
+                      <Button className="w-full bg-blue-900 hover:bg-yellow-600 transition-colors">
+                        Learn More & Get Quote
+                      </Button>
+                    </Link>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose Us - Enhanced */}
+      <section className="py-20 bg-blue-900 text-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-[url('/placeholder.svg?height=600&width=1200')] bg-cover bg-center opacity-5"></div>
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="text-center mb-16">
+            <Badge className="mb-4 bg-yellow-600/20 border border-yellow-400 text-yellow-300 px-4 py-2">
+              Why Choose Euro Gulf Tech?
+            </Badge>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">The Smart Choice for HVAC Excellence</h2>
+            <p className="text-xl text-blue-100 max-w-4xl mx-auto leading-relaxed">
+              We don&apos;t just install systems – we deliver comprehensive solutions that drive your business forward
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-8">
+            {differentiators.map((item, index) => (
+              <div
+                key={index}
+                className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300"
+              >
+                <div className="flex items-start gap-6">
+                  <div className="bg-yellow-600 p-4 rounded-2xl flex-shrink-0">{item.icon}</div>
+                  <div>
+                    <h3 className="text-2xl font-bold mb-3">{item.title}</h3>
+                    <p className="text-blue-100 mb-4 leading-relaxed">{item.description}</p>
+                    <div className="bg-green-500/20 text-green-300 px-4 py-2 rounded-full text-sm font-semibold inline-block">
+                      ✓ {item.benefit}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Enhanced Testimonials */}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <Badge className="mb-4 bg-green-100 text-green-800 px-4 py-2">Client Success Stories</Badge>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">What Our Clients Say</h2>
+            <p className="text-xl text-gray-600">Real results from real businesses across the UAE</p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              {
+                company: "NAFCO",
+                type: "Industrial Manufacturing",
+                quote:
+                  "Euro Gulf Tech transformed our facility with a state-of-the-art cold room system. The installation was flawless, and their ongoing maintenance has kept us running at 100% efficiency for over 3 years.",
+                result: "Zero downtime in 3 years",
+                person: "Ahmed Al-Rashid",
+                position: "Operations Manager",
+              },
+              {
+                company: "TechnoPro Middle East",
+                type: "Commercial Office Complex",
+                quote:
+                  "Their HVAC expertise is unmatched. They designed a custom solution that reduced our energy costs by 35% while improving air quality throughout our 50,000 sq ft facility.",
+                result: "35% energy cost reduction",
+                person: "Sarah Johnson",
+                position: "Facilities Director",
+              },
+              {
+                company: "Dubai City Builders",
+                type: "Construction & Development",
+                quote:
+                  "We&apos;ve partnered with Euro Gulf Tech on 15+ projects. Their kitchen hood installations are always on time, on budget, and exceed safety standards. True professionals.",
+                result: "15+ successful projects",
+                person: "Mohammad Hassan",
+                position: "Project Manager",
+              },
+            ].map((testimonial, index) => (
+              <Card key={index} className="hover:shadow-xl transition-all duration-300 border-0 shadow-lg">
+                <CardContent className="p-8">
+                  <div className="flex mb-4">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="h-5 w-5 fill-yellow-400 text-yellow-400" />
+                    ))}
+                  </div>
+                  <blockquote className="text-gray-700 mb-6 leading-relaxed italic">&apos;{testimonial.quote}&apos;</blockquote>
+                  <div className="bg-green-50 text-green-800 px-4 py-2 rounded-lg text-sm font-semibold mb-4 inline-block">
+                    📈 {testimonial.result}
+                  </div>
+                  <div className="border-t pt-4">
+                    <div className="font-bold text-gray-900 text-lg">{testimonial.company}</div>
+                    <div className="text-blue-600 font-medium mb-2">{testimonial.type}</div>
+                    <div className="text-gray-600 text-sm">
+                      {testimonial.person}, {testimonial.position}
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Enhanced CTA Section */}
+      <section className="py-20 bg-gradient-to-r from-yellow-600 via-yellow-500 to-yellow-600 text-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-black/10"></div>
+        <div className="container mx-auto px-4 text-center relative z-10">
+          <div className="max-w-4xl mx-auto">
+            <Badge className="mb-6 bg-white/20 text-white border-white/30 px-4 py-2 text-lg">
+              Ready to Transform Your Business?
+            </Badge>
+            <h2 className="text-4xl md:text-6xl font-bold mb-6">Get Your Free HVAC Assessment</h2>
+            <p className="text-xl md:text-2xl mb-8 leading-relaxed opacity-90">
+              Join 500+ satisfied clients who trust Euro Gulf Tech for their HVAC needs. Get a comprehensive assessment
+              and custom quote within 24 hours.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-6 justify-center mb-8">
+              <Button
+                size="lg"
+                className="bg-white text-yellow-700 hover:bg-gray-100 px-10 py-4 text-xl font-bold shadow-xl hover:shadow-2xl transition-all"
+              >
+                <Phone className="mr-3 h-6 w-6" />
+                Call +971 (06) 5311304
+              </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-2 border-white text-white hover:bg-white hover:text-yellow-700 px-10 py-4 text-xl font-bold transition-all"
+              >
+                <MessageCircle className="mr-3 h-6 w-6" />
+                WhatsApp Consultation
+              </Button>
+            </div>
+            <div className="grid md:grid-cols-3 gap-6 text-center">
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4">
+                <div className="text-2xl font-bold">Free</div>
+                <div className="text-sm opacity-90">Site Assessment</div>
+              </div>
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4">
+                <div className="text-2xl font-bold">24hrs</div>
+                <div className="text-sm opacity-90">Quote Delivery</div>
+              </div>
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4">
+                <div className="text-2xl font-bold">24/7</div>
+                <div className="text-sm opacity-90">Emergency Support</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
-  );
+  )
 }
