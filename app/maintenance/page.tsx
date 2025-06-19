@@ -212,7 +212,7 @@ export default function MaintenancePage() {
                       <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
                     ))}
                   </div>
-                  <blockquote className="text-lg text-gray-700 mb-6 italic">"{testimonial.quote}"</blockquote>
+                  <blockquote className="text-lg text-gray-700 mb-6 italic">&ldquo;{testimonial.quote}&ldquo;</blockquote>
                   <div>
                     <div className="font-semibold text-gray-900">{testimonial.author}</div>
                     <div className="text-gray-600">{testimonial.company}</div>
@@ -229,7 +229,7 @@ export default function MaintenancePage() {
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-4xl font-bold mb-6">Ready to Protect Your Investment?</h2>
           <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-            Don't wait for a breakdown. Start your maintenance program today and save thousands in repair costs.
+            Don&ldquo;t wait for a breakdown. Start your maintenance program today and save thousands in repair costs.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" className="bg-yellow-600 hover:bg-yellow-700 text-white px-8 py-4">
