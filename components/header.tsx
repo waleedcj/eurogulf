@@ -3,7 +3,7 @@
 import { useState } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
+import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet"
 import { Badge } from "@/components/ui/badge"
 import { Menu, Phone, Snowflake, X } from "lucide-react"
 import { WhatsAppIcon } from "@/app/images/Icons"
@@ -89,6 +89,7 @@ export default function Header() {
               </Button>
             </SheetTrigger>
             <SheetContent side="right" className="w-80">
+            <SheetTitle className="sr-only">Menu</SheetTitle> 
               <div className="flex items-center justify-between mb-6">
                 <div className="flex items-center space-x-2">
                   <div className="bg-blue-900 p-2 rounded-lg">
@@ -99,9 +100,9 @@ export default function Header() {
                     <div className="text-xs text-gray-600">Contracting LLC</div>
                   </div>
                 </div>
-                <Button variant="ghost" size="sm" onClick={() => setIsOpen(false)}>
+                {/* <Button variant="ghost" size="sm" onClick={() => setIsOpen(false)}>
                   <X className="h-5 w-5" />
-                </Button>
+                </Button> */}
               </div>
 
               <nav className="space-y-4">

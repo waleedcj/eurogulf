@@ -167,7 +167,7 @@ export default function ContactPage() {
                         <SelectTrigger>
                           <SelectValue placeholder="Select a service" />
                         </SelectTrigger>
-                        <SelectContent>
+                        <SelectContent >
                           <SelectItem value="refrigeration">Refrigeration Systems</SelectItem>
                           <SelectItem value="cold-room">Cold Storage Installation</SelectItem>
                           <SelectItem value="kitchen-hood">Kitchen Hood Systems</SelectItem>

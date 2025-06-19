@@ -1,5 +1,5 @@
 @import "tailwindcss";
-/* @import "../tailwind.config.ts"; */
+@import "tw-animate-css";
 
 body {
   font-family: Arial, Helvetica, sans-serif;
@@ -102,7 +102,8 @@ body {
 }
 
 .animate-scroll {
-  animation: scroll 30s linear infinite;
+  animation: scroll 60s linear infinite;
+  width: calc(200% + 32px); /* Adjust based on your spacing */
 }
 
 .animate-scroll:hover {
