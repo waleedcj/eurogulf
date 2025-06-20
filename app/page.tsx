@@ -122,6 +122,10 @@ export default function HomePage() {
         "https://cdn.jsdelivr.net/gh/waleedcj/eurogulfassets/naffconew.webp",
     },
     {
+      name: "kezad",
+      image: "https://cdn.jsdelivr.net/gh/waleedcj/eurogulfassets/kezad.webp",
+    },
+    {
       name: "TechnoPro Middle East",
       image:
         "https://cdn.jsdelivr.net/gh/waleedcj/eurogulfassets/technopro.webp",
@@ -134,10 +138,6 @@ export default function HomePage() {
     {
       name: "Barakat",
       image: "https://cdn.jsdelivr.net/gh/waleedcj/eurogulfassets/barakat.webp",
-    },
-    {
-      name: "OMIS",
-      image: "https://cdn.jsdelivr.net/gh/waleedcj/eurogulfassets/omis.webp",
     },
     {
       name: "TSSC",
@@ -183,8 +183,17 @@ export default function HomePage() {
   return (
     <div className="min-h-screen">
       {/* Enhanced Hero Section with Video Background */}
-      <section className="relative bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 text-white py-20 lg:py-28 overflow-hidden">
-        <div className="absolute inset-0 bg-black/50"></div>
+      <section className="relative text-white py-20 lg:py-28 overflow-hidden">
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline // Crucial for iOS autoplay
+        className="absolute inset-0 h-full object-cover  w-[200%] object-left   md:w-full md:object-center"
+        src="https://cdn.jsdelivr.net/gh/waleedcj/eurogulfassets/heroVideo.mp4"
+      >
+      </video>
+        <div className="absolute inset-0 bg-black/60"></div>
         {/* Video background placeholder - replace with actual video */}
         <div className="absolute inset-0 bg-[url('/placeholder.svg?height=1080&width=1920')] bg-cover bg-center opacity-20"></div>
 
