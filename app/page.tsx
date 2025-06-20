@@ -269,7 +269,7 @@ export default function HomePage() {
                 >
                   <Link
                     href={whatsappUrl}
-                    target="_blank"
+                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Chat on WhatsApp"
                   >
