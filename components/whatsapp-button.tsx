@@ -12,12 +12,12 @@ interface WhatsAppButtonProps {
   message?: string; // Optional pre-filled message
 }
 
-export function WhatsAppButton({ phoneNumber, message = "Hello! I'm interested in your services." }: WhatsAppButtonProps) {
+export function WhatsAppButton({ phoneNumber, message = "Hello! I'm interested in Euro Gulf Tech's HVAC services. Please provide more information and a quote." }: WhatsAppButtonProps) {
   // Encode the message for URL
   const encodedMessage = encodeURIComponent(message);
   
-  // Create WhatsApp URL
-  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+  // Create WhatsApp URL 
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
 
   return (
     <div className="fixed bottom-6 right-6 z-50">

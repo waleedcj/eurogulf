@@ -19,6 +19,8 @@ import {
 import { WhatsAppIcon } from "./images/Icons";
 import Image from "next/image";
 import ServiceCard from "@/components/service-card";
+import Link from "next/link";
+import { whatsappUrl } from "@/lib/utils";
 
 export default function HomePage() {
   const services = [
@@ -187,7 +189,7 @@ export default function HomePage() {
       <video
         autoPlay
         loop
-        muted
+        muted={true}
         playsInline // Crucial for iOS autoplay
         className="absolute inset-0 h-full object-cover  w-[200%] object-left   md:w-full md:object-center"
         src="https://cdn.jsdelivr.net/gh/waleedcj/eurogulfassets/heroVideo.mp4"
@@ -195,15 +197,15 @@ export default function HomePage() {
       </video>
         <div className="absolute inset-0 bg-black/60"></div>
         {/* Video background placeholder - replace with actual video */}
-        <div className="absolute inset-0 bg-[url('/placeholder.svg?height=1080&width=1920')] bg-cover bg-center opacity-20"></div>
+        {/* <div className="absolute inset-0 bg-[url('/placeholder.svg?height=1080&width=1920')] bg-cover bg-center opacity-20"></div> */}
 
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-6xl mx-auto text-center">
-            <Badge className="mb-8 bg-yellow-600/20 border-2 border-yellow-400 rounded-xl text-yellow-300 hover:bg-yellow-600/30 text-md px-6 py-3 font-semibold">
+            <Badge className="mb-8 bg-yellow-600/20 border-2 border-yellow-400 rounded-xl text-yellow-300 hover:bg-yellow-600/30 text-md px-4 py-3 font-semibold max-w-full sm:max-w-fit mx-auto block whitespace-normal text-center break-words">
               🏆 UAE&apos;s #1 HVAC Solutions Provider • 18+ Years of Excellence
             </Badge>
 
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight">
               Developing Safety in the{" "}
               <span className="text-yellow-400 relative inline-block">
                 Real World
@@ -211,7 +213,7 @@ export default function HomePage() {
               </span>
             </h1>
 
-            <p className="text-1xl md:text-2xl mb-12 text-blue-100 leading-relaxed max-w-5xl mx-auto font-light">
+            <p className="text-xl md:text-2xl mb-12 text-blue-100 leading-relaxed max-w-5xl mx-auto font-light">
               Professional HVAC solutions trusted by{" "}
               <span className="font-bold text-yellow-400">500+ companies</span>{" "}
               across the UAE. From design to maintenance, we deliver excellence
@@ -258,14 +260,24 @@ export default function HomePage() {
                 <Phone className="mr-2 h-6 w-6" />
                 Get Free Assessment
               </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className=" border-white text-white hover:bg-white hover:text-blue-900 px-12 py-6 text-xl font-bold transition-all duration-300 hover:scale-105 hover:cursor-pointer"
-              >
-                <WhatsAppIcon className="h-15 w-15 mr-2" />
-                WhatsApp Consultation
-              </Button>
+         
+                <Button
+                  asChild
+                  variant="outline"
+                  size="lg"
+                  className="px-12 py-6 text-xl font-bold flex flex-row items-center border-white text-white hover:bg-white hover:text-blue-900 transition-all duration-300 hover:scale-105 hover:cursor-pointer"
+                >
+                  <Link
+                    href={whatsappUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Chat on WhatsApp"
+                  >
+                    <WhatsAppIcon className="h-6 w-6 mr-2" />
+                    WhatsApp Consultation
+                  </Link>
+                </Button>
+              
             </div>
 
             {/* Trust Indicators */}

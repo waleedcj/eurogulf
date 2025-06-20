@@ -29,7 +29,7 @@ export default function RootLayout({
           <Header />
           <main>{children}</main>
           <Footer />
-          <WhatsAppButton phoneNumber="971547425544" message="Hello! I'm interested in your business setup services." />
+          <WhatsAppButton phoneNumber="971547425544" message="Hello! I'm interested in Euro Gulf Tech's HVAC services. Please provide more information and a quote." />
         {/* </ThemeProvider> */}
       </body>
     </html>
